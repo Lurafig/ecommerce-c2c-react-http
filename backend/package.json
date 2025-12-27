@@ -1,5 +1,6 @@
 {
   "name": "backend",
+  "type": "module",
   "scripts": {
     "dev": "node --watch src/server.js",
     "start": "node src/server.js"
@@ -9,14 +10,5 @@
   "dependencies": {
     "dotenv": "^17.2.3",
     "mysql": "^2.18.1"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.39.2",
-    "eslint": "^9.39.2",
-    "eslint-config-prettier": "^10.1.8",
-    "globals": "^16.5.0",
-    "jest": "^30.2.0",
-    "nodemon": "^3.1.11",
-    "prettier": "^3.7.4"
   }
 }
