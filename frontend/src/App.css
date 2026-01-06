@@ -1,8 +1,27 @@
 #root {
+  display: flex;
+  flex-direction: column;
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  height: 100%;
+  width: 100%;
+  margin: 0;
   text-align: center;
+}
+
+#home-n-upload-ctn,
+#profile-link-ctn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+#home-n-upload-ctn {
+  background-color: blue;
+}
+
+#profile-link-ctn {
+  background-color: green;
 }
 
 .logo {

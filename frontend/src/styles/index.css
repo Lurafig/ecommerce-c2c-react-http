@@ -1,16 +1,22 @@
+@import url("./variables.css");
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--secondary-color);
+  background-color: rgb(31, 31, 31);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
 }
 
 a {
@@ -22,9 +28,26 @@ a:hover {
   color: #535bf2;
 }
 
+nav {
+  display: flex;
+  flex-direction: row;
+  position: sticky;
+  height: 100px;
+  top: 0;
+  background-color: red;
+}
+
+main {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  flex: 1;
+}
+
 body {
   margin: 0;
   display: flex;
+  height: 100vh;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -33,6 +56,11 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+p,
+h1 {
+  margin: 0;
 }
 
 button {

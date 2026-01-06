@@ -1,0 +1,36 @@
+@import url("../../styles/variables.css");
+
+.searchOptionsCtn {
+  display: flex;
+  align-items: center;
+  border-radius: var(--main-radius);
+  gap: 10px;
+  justify-content: center;
+  width: calc(100% - 20px);
+  height: 55px;
+  position: absolute;
+  margin-top: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px 1px var(--shadow-color);
+}
+
+.searchInput,
+.orderSelection {
+  color: var(--secondary-color);
+  height: 40px;
+}
+
+.searchInput {
+  background-color: var(--background1);
+  border-radius: var(--main-radius);
+  outline: none;
+  margin-left: 5px;
+  border: none;
+  width: 65%;
+  padding: 0;
+}
+
+.orderSelection {
+  margin-right: 5px;
+  width: 35%;
+}
