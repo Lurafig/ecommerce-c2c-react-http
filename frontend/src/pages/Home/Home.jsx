@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { AdsList } from "../../components/AdsList";
 import styles from "./Home.module.css";
 
 export default function Home() {
+  useEffect(() => {
+    document.title = "Home | Connte";
+  }, []);
+
   return (
     <main>
       <div className={styles.searchOptionsCtn}>

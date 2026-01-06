@@ -17,15 +17,15 @@
 .searchInput,
 .orderSelection {
   color: var(--secondary-color);
+  border-radius: var(--main-radius);
+  background-color: var(--background1);
+  border: none;
+  outline: none;
   height: 40px;
 }
 
 .searchInput {
-  background-color: var(--background1);
-  border-radius: var(--main-radius);
-  outline: none;
   margin-left: 5px;
-  border: none;
   width: 65%;
   padding: 0;
 }
