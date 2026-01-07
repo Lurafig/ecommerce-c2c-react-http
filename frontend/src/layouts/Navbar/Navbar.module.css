@@ -1,0 +1,30 @@
+@import url("../../styles/variables.css");
+
+.MainNavbar {
+  display: flex;
+  flex-direction: row;
+  position: sticky;
+  height: 100px;
+  top: 0;
+  background-color: var(--background1);
+}
+
+/* Os dois lados da Navbar
+1: Link para a Home
+2: Link para o profile
+ */
+.HomeAndUploadCtn,
+.profileLinkCtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.HomeAndUploadCtn {
+  background-color: var(--background5);
+}
+
+/* .profileLinkCtn {
+  background-color: green;
+} */
