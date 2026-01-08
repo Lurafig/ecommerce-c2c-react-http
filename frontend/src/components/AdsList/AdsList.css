@@ -1,0 +1,9 @@
+.AdsListCtn {
+  display: flex;
+  margin-top: 85px;
+  column-gap: 10px;
+  row-gap: 15px;
+  justify-content: center;
+  width: calc(100% - 30px);
+  flex-wrap: wrap;
+}
