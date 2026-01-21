@@ -4,6 +4,8 @@ import PostAdImage from "../../assets/AddA.svg";
 import ShortButton from "../../components/Buttons/ShortButton";
 const p = true;
 
+// Inserir container de login.
+
 export default function Navbar() {
   return (
     <nav className={styles.MainNavbar}>
