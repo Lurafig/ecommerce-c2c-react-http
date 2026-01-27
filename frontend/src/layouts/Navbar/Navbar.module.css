@@ -5,6 +5,8 @@
   flex-direction: row;
   position: sticky;
   height: 100px;
+  box-shadow: 0 0 10px 5px var(--shadow-color);
+  z-index: 1;
   top: 0;
   background-color: var(--background1);
 }
@@ -15,6 +17,7 @@
  */
 .HomeAndUploadCtn,
 .profileLinkCtn {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,6 +28,45 @@
   background-color: var(--background5);
 }
 
-/* .profileLinkCtn {
-  background-color: green;
-} */
+.HomeLink {
+  color: inherit;
+  position: absolute;
+  padding: 5px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  left: -30px;
+  transform: rotate(90deg);
+  background-color: var(--background1);
+}
+
+.HomeLink:hover {
+  color: var(--main-background);
+  font-weight: 700;
+  background-color: var(--secondary-color);
+}
+
+.profileLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  gap: 10px;
+  background-color: var(--background4);
+  border: var(--main-border);
+}
+
+.profileLink p {
+  max-width: 100px;
+  text-wrap-mode: nowrap;
+  color: var(--secondary-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 5px;
+}
+
+@media screen and (max-width: 500px) {
+  .profileLink p {
+    display: none;
+  }
+}
