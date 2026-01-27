@@ -8,6 +8,8 @@ import ShortButton from "../../components/Buttons/ShortButton/ShortButton";
 import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 
+// Inserir container de login.
+
 export default function Navbar() {
   const [isOpen, setIsopen] = useState(false);
 
