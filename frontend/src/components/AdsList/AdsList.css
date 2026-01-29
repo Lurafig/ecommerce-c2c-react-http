@@ -1,9 +1,27 @@
 .AdsListCtn {
-  display: flex;
-  margin-top: 85px;
+  position: relative;
+  width: calc(250px * 4);
+  column-count: 4;
   column-gap: 10px;
-  row-gap: 15px;
-  justify-content: center;
-  width: calc(100% - 30px);
-  flex-wrap: wrap;
+}
+
+@media screen and (max-width: calc(250px * 4 + 30px)) {
+  .AdsListCtn {
+    width: calc(250px * 3);
+    column-count: 3;
+  }
+}
+
+@media screen and (max-width: calc(250px * 3 + 20px)) {
+  .AdsListCtn {
+    width: calc(250px * 2);
+    column-count: 2;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .AdsListCtn {
+    width: calc(100vw - 30px);
+    column-count: 1;
+  }
 }

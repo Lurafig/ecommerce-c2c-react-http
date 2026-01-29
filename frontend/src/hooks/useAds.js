@@ -1,24 +1,37 @@
 import { useEffect, useState } from "react";
 
+const p = [];
+
+import formatPrice from "../utils/formatPrice";
+
 export async function loadin() {
   return await new Promise((resolve) => {
     let i = 0;
     const p = setInterval(() => {
-      if (i < 3) {
+      if (i < 2) {
         i++;
         return;
       }
 
-      resolve([
-        {
-          id: 1,
-          name: "Lucas",
-        },
-        {
-          id: 2,
-          name: "Leros",
-        },
-      ]);
+      const texts = [
+        "testando d ednjnrjnjnd de edndejnj denjdn jednedjed dejnjdnadjndneidniueuidheihidhaidihehdiuaehudiheuad adniuheadhuaehduh adnaeuhduiaehui eaduneidhiuahefuuyrygyg beduyysygsyugf",
+        "opa eu sou iiai dna dnudenu iaa iaa ie ie ie ie",
+        "eu não sei",
+      ];
+
+      resolve(
+        (() => {
+          let list = [];
+          for (let i = 0; i < 15; i++) {
+            list.push({
+              id: i,
+              description: texts[Math.floor(Math.random() * 3)],
+              price: formatPrice(parseFloat((Math.random() * 10).toFixed(2))),
+            });
+          }
+          return list;
+        })(),
+      );
 
       clearInterval(p);
       return;

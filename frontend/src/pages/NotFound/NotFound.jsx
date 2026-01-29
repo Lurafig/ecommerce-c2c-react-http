@@ -1,13 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { SetPageTitle } from "../../utils/setPageTitle";
 
 function NotFound() {
-  useEffect(() => {
-    document.title = "404 | Connte";
-  }, []);
+  SetPageTitle("404");
 
   return (
-    <main>
-      <h1>404 this page was not found</h1>
+    <main
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <h1>{"This page was not found"}</h1>
     </main>
   );
 }

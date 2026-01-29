@@ -1,24 +1,40 @@
-import React, { useEffect } from "react";
-import { AdsList } from "../../components/AdsList";
+import React from "react";
+
+import { SetPageTitle } from "../../utils/setPageTitle";
+
+import { AdsList } from "../../components/AdsList/AdsList";
+
+import searchButtonImg from "../../assets/icons8-search.svg";
+
 import styles from "./Home.module.css";
 
 export default function Home() {
-  useEffect(() => {
-    document.title = "Home | Connte";
-  }, []);
+  SetPageTitle("home");
 
   return (
     <main>
       <div className={styles.searchOptionsCtn}>
-        <input className={styles.searchInput}></input>
-        <select className={styles.orderSelection}>
-          <option selected hidden>
-            Ordenar por:
-          </option>
-        </select>
+        <div className={styles.searchTitlesCtn}>
+          <input
+            className={styles.searchInput}
+            placeholder="Busque Anúncios"
+          ></input>
+          <button className={styles.searchButton}>
+            <img src={searchButtonImg}></img>
+          </button>
+        </div>
+        <div className={styles.orderSelectionCtn}>
+          <select defaultValue="default" className={styles.orderSelection}>
+            <option value="default" hidden>
+              Ordenar Por:
+            </option>
+            <option value="0">Mais recente</option>
+            <option value="1">Mais barato</option>
+            <option value="2">Mais caro</option>
+          </select>
+        </div>
       </div>
       <AdsList />
-      <h1>Hello, World, home</h1>
     </main>
   );
 }

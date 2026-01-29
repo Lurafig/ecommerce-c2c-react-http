@@ -1,12 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { SetPageTitle } from "../../utils/setPageTitle";
 
 export default function Post() {
-  useEffect(() => {
-    document.title = "Post | Connte";
-  }, []);
+  SetPageTitle("post");
 
   return (
-    <main>
+    <main
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
       <h1>Post page here</h1>
     </main>
   );

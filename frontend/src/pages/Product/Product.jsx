@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { SetPageTitle } from "../../utils/setPageTitle";
 import { useParams } from "react-router-dom";
 
 const Products = () => {
   const [count, setCount] = useState(0);
 
   const { productID } = useParams();
+
+  SetPageTitle("product");
 
   useEffect(() => {
     if (count === 0) return;

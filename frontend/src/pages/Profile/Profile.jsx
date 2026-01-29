@@ -5,7 +5,13 @@ export default function Profile() {
     document.title = "Profile | Connte";
   }, []);
   return (
-    <main>
+    <main
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
       <h1>Profile page here</h1>
     </main>
   );
