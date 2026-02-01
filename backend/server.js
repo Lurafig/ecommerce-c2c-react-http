@@ -1,5 +1,5 @@
 import http from "http";
-import { handleRequest } from "./routes";
+import { handleRequest } from "./routes.js";
 
 const PORT = 3000;
 

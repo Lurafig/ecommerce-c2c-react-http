@@ -3,7 +3,7 @@ import {
   createProduto,
   updateProduto,
   deleteProduto,
-} from "./controllers/produtosController";
+} from "./controllers/produtosController.js";
 
 export function handleRequest(req, res) {
   res.setHeader("Content-Type", "application/json");
@@ -15,7 +15,7 @@ export function handleRequest(req, res) {
     "DELETE /api/produtos": deleteProduto,
   };
 
-  const routeKey = `${req.method} ${req.url}`;
+  const routeKey = `${req.method} ${req.url.split("/").slice(0, 3).join("/")}`;
 
   const handler = routes[routeKey];
 
