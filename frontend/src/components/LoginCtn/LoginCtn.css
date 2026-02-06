@@ -1,5 +1,4 @@
 .loginBackground {
-  display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1;
@@ -10,6 +9,8 @@
 }
 
 .loginForms {
+  container-type: inline-size;
+  container-name: form;
   width: calc(100% - 50px);
   max-width: 720px;
 }
@@ -22,11 +23,21 @@
   border-radius: 25px;
   box-shadow: 0 0 15px var(--shadow-color);
   background-color: var(--background5);
+  will-change: display;
 }
 
 .loginCtn {
   display: flex;
 }
+
+/* @container form (width < 600px) {
+  .loginCtn,
+  .registerCtn {
+    display: grid;
+    height: 450px;
+    background-color: red;
+  }
+} */
 
 .title-and-switch {
   gap: 10px;
@@ -60,7 +71,9 @@
   text-decoration: underline;
 }
 
-.loginCtn h1 {
+.loginCtn h2,
+.registerCtn h2 {
+  font-size: 45px;
   width: 100%;
   text-align: center;
 }
@@ -88,6 +101,7 @@
 }
 
 .loginFields button {
+  margin-top: 15px;
   cursor: pointer;
   height: 55px;
   width: 150px;
@@ -98,6 +112,9 @@
   color: black;
 }
 
+.loginFields button:hover {
+  background-color: var(--darker-secondary-color);
+}
 .loginFields button:active {
   background-color: var(--darker-secondary-color);
 }
@@ -106,11 +123,10 @@
   .loginForms {
     max-width: 400px;
   }
+
   .loginCtn,
   .registerCtn {
-    display: grid;
-    height: 450px;
-    background-color: var(--background4);
+    max-height: 450px;
   }
 
   .title-and-switch {

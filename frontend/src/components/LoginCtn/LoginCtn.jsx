@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from "react";
 
+import { UseLoginContext } from "./LoginContext";
+
 import "./LoginCtn.css";
 
 export default function LoginCtn() {
+  const { isOpen, closeLogin } = UseLoginContext();
   const [isLoginForm, setIsLoginForm] = useState(true);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  const toggleForm = () => {
-    setIsLoginForm((prev) => !prev);
-  };
-
   useEffect(() => {
+    function debounce(fn, delay) {
+      let timeout;
+      return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          fn.apply(this, args);
+        }, delay);
+      };
+    }
+
     // Função que atualiza o estado com o tamanho atual da janela
     function handleResize() {
       setWindowWidth(window.innerWidth);
@@ -18,7 +27,7 @@ export default function LoginCtn() {
     }
 
     // Adiciona o listener
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", debounce(handleResize, 200));
 
     // Chama uma vez para garantir estado inicial correto
     handleResize();
@@ -29,12 +38,18 @@ export default function LoginCtn() {
     };
   }, []);
 
+  const toggleForm = () => {
+    setIsLoginForm((prev) => !prev);
+  };
+
   return (
     <div
       className="loginBackground"
+      style={{ display: isOpen ? "flex" : "none" }}
+      // usa o setIsOpen aqui embaixo!
       onClick={(event) => {
-        if (event.target.className === "loginBackground") {
-          event.target.style.display = "none";
+        if (event.target === event.currentTarget) {
+          closeLogin();
         }
       }}
     >
@@ -50,7 +65,7 @@ export default function LoginCtn() {
           }}
         >
           <div className="title-and-switch">
-            <h1>Logar</h1>
+            <h2>Logar</h2>
             <div className="switch-form">
               <p>
                 Não tem uma conta ainda?
@@ -73,7 +88,7 @@ export default function LoginCtn() {
           }}
         >
           <div className="title-and-switch">
-            <h1>Registrar</h1>
+            <h2>Registrar</h2>
             <div className="switch-form">
               <p>
                 Já tem uma conta?
