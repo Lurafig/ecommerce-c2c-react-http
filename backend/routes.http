@@ -12,8 +12,8 @@ POST http://localhost:3000/api/produtos/
 Content-Type: application/json
 
 {
-  "name": "{{username}}",
-  "idade": 25
+  "description": "{{username}}",
+  "price": 25
 }
 
 ###
@@ -26,8 +26,8 @@ PUT http://localhost:3000/api/produtos/{{id}}
 Content-Type: application/json
 
 {
-  "name": "{{username}}",
-  "idade": 33
+  "description": "{{username}}",
+  "price": 33
 }
 
 ###

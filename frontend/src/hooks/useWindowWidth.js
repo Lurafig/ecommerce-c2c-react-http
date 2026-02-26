@@ -17,7 +17,8 @@ export function useWindowWidth() {
 
     window.addEventListener("resize", debounce(handleResize, 200));
 
-    return () => window.removeEventListener("resize", handleResize);
+    return () =>
+      window.removeEventListener("resize", debounce(handleResize, 200));
   }, []);
 
   return width;

@@ -5,7 +5,7 @@ const p = [];
 import formatPrice from "../utils/formatPrice";
 
 export async function loadin() {
-  return fetch("http://localhost:3000/api/produtos");
+  return fetch("http://localhost:3000/api/produtos", { method: "GET" });
   // return await new Promise((resolve) => {
   //   let i = 0;
   //   const p = setInterval(() => {

@@ -20,12 +20,12 @@ export default function Home() {
             placeholder="Busque Anúncios"
           ></input>
           <button className={styles.searchButton}>
-            <img src={searchButtonImg}></img>
+            <img src={searchButtonImg} draggable="false"></img>
           </button>
         </div>
         <div className={styles.orderSelectionCtn}>
           <select defaultValue="default" className={styles.orderSelection}>
-            <option value="default" hidden>
+            <option value="" disabled selected hidden>
               Ordenar Por:
             </option>
             <option value="0">Mais recente</option>

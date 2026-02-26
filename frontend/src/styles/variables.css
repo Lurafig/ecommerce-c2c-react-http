@@ -1,3 +1,18 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+/* @custom-variant dark (&:where([data-theme=dark],[data-theme:dark] *)); */
+
+@layer theme {
+  :root {
+    --bg-primary: blue;
+  }
+
+  @variant dark {
+    --bg-primary: green;
+  }
+}
+
 :root {
   --logo-png: url("../../assets/logod.png");
   --color-text: rgb(205, 205, 205);

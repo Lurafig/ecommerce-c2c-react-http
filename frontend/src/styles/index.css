@@ -1,4 +1,5 @@
 @import url("./variables.css");
+@import "tailwindcss";
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -16,7 +17,12 @@
 
 * {
   box-sizing: border-box;
-  margin: 0;
+  /* margin: 0; */
+}
+
+*::selection {
+  color: black;
+  background-color: var(--secondary-color);
 }
 
 a {
@@ -41,10 +47,10 @@ h1 {
   line-height: 1.1;
 }
 
-p,
+/* p,
 h1 {
   margin: 0;
-}
+} */
 
 /* button {
   border-radius: 8px;
@@ -69,8 +75,8 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: red;
+    background-color: green;
   }
   a:hover {
     color: #747bff;

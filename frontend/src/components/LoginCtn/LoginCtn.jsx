@@ -2,40 +2,25 @@ import React, { useEffect, useState } from "react";
 
 import { UseLoginContext } from "./LoginContext";
 
+// import { useWindowWidth } from "../../hooks/useWindowWidth";
+
 import "./LoginCtn.css";
 
 export default function LoginCtn() {
   const { isOpen, closeLogin } = UseLoginContext();
   const [isLoginForm, setIsLoginForm] = useState(true);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [below700Px, setBelow700Px] = useState(false);
 
   useEffect(() => {
-    function debounce(fn, delay) {
-      let timeout;
-      return function (...args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => {
-          fn.apply(this, args);
-        }, delay);
-      };
-    }
+    const y = window.matchMedia("(max-width:700px)");
 
-    // Função que atualiza o estado com o tamanho atual da janela
-    function handleResize() {
-      setWindowWidth(window.innerWidth);
-      console.log(window.innerWidth);
-    }
+    const handleChange = () => setBelow700Px(y.matches);
 
-    // Adiciona o listener
-    window.addEventListener("resize", debounce(handleResize, 200));
+    setBelow700Px(y.matches);
 
-    // Chama uma vez para garantir estado inicial correto
-    handleResize();
+    y.addEventListener("change", handleChange);
 
-    // Remove o listener ao desmontar o componente
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => y.removeEventListener("change", handleChange);
   }, []);
 
   const toggleForm = () => {
@@ -46,7 +31,6 @@ export default function LoginCtn() {
     <div
       className="loginBackground"
       style={{ display: isOpen ? "flex" : "none" }}
-      // usa o setIsOpen aqui embaixo!
       onClick={(event) => {
         if (event.target === event.currentTarget) {
           closeLogin();
@@ -57,17 +41,13 @@ export default function LoginCtn() {
         <div
           className="loginCtn"
           style={{
-            display: isLoginForm
-              ? windowWidth > 700
-                ? "flex"
-                : "grid"
-              : "none",
+            display: isLoginForm ? (below700Px ? "grid" : "flex") : "none",
           }}
         >
           <div className="title-and-switch">
             <h2>Logar</h2>
             <div className="switch-form">
-              <p>
+              <p className="text-primary-500">
                 Não tem uma conta ainda?
                 <a className="switch-link" onClick={toggleForm}>
                   registre-se
@@ -75,16 +55,28 @@ export default function LoginCtn() {
               </p>
             </div>
           </div>
-          <div className="loginFields">
-            <input placeholder="Email"></input>
-            <input placeholder="Senha"></input>
+          <form className="loginForm">
+            <div className="loginFields">
+              <input
+                className="bg-amber-100 dark:bg-amber-700"
+                type="email"
+                placeholder="Email"
+                required
+              ></input>
+              <input
+                className="px-0.5"
+                type="password"
+                placeholder="Senha"
+                required
+              ></input>
+            </div>
             <button>Logar</button>
-          </div>
+          </form>
         </div>
         <div
           className="registerCtn"
           style={{
-            display: isLoginForm ? "none" : windowWidth > 700 ? "flex" : "grid",
+            display: isLoginForm ? "none" : below700Px ? "grid" : "flex",
           }}
         >
           <div className="title-and-switch">
@@ -98,12 +90,29 @@ export default function LoginCtn() {
               </p>
             </div>
           </div>
-          <div className="loginFields">
-            <input placeholder="Nome"></input>
-            <input placeholder="Email"></input>
-            <input placeholder="Senha"></input>
-            <button>Registrar</button>
-          </div>
+          <form className="loginForm">
+            <div className="loginFields">
+              <input
+                className="px-0.5"
+                type="text"
+                placeholder="Nome"
+                required
+              ></input>
+              <input
+                className="px-0.5"
+                type="email"
+                placeholder="Email"
+                required
+              ></input>
+              <input
+                className="px-0.5"
+                type="password"
+                placeholder="Senha"
+                required
+              ></input>
+            </div>
+            <button className="w-25">Registrar</button>
+          </form>
         </div>
       </div>
     </div>

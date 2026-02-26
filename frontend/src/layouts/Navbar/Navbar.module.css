@@ -46,6 +46,43 @@
   background-color: var(--secondary-color);
 }
 
+.ShortButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.linkToPost {
+  border: 5px solid var(--main-background);
+  background-color: var(--secondary-color);
+  overflow: hidden;
+  outline: none;
+}
+
+.profileBttn {
+  color: var(--secondary-color);
+  border: 5px solid var(--background3);
+  background-color: var(--main-background);
+  overflow: hidden;
+  outline: none;
+}
+
+.profileName {
+  width: 85px;
+  padding: 7px;
+  overflow: hidden;
+  text-wrap-mode: nowrap;
+  text-overflow: ellipsis;
+}
+
+.profilePicture {
+  object-position: center;
+  border: solid 5px var(--main-background);
+  border-radius: 50px;
+}
+
 .profileLink {
   display: flex;
   align-items: center;

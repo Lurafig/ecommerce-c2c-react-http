@@ -9,7 +9,7 @@
   border-radius: var(--main-radius);
   gap: 10px;
   justify-content: center;
-  width: calc(100% - 30px);
+  width: calc(100% - 40px);
   max-width: 600px;
   height: 55px;
   margin-top: 12px;
@@ -41,7 +41,7 @@
 .searchInput {
   border-radius: var(--main-radius) 0 0 var(--main-radius);
   width: 100%;
-  padding: 0;
+  padding: 2px;
 }
 
 .searchInput::placeholder {
@@ -54,6 +54,7 @@
   align-items: center;
   justify-content: center;
   background-color: var(--background1);
+  cursor: pointer;
   height: 100%;
   width: 45px;
   border: none;
@@ -82,6 +83,7 @@
 .orderSelection {
   border-radius: var(--main-radius);
   width: 100%;
+  cursor: pointer;
   border-radius: 8px;
   text-align: center;
   flex: 1;

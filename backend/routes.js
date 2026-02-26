@@ -7,6 +7,7 @@ import {
 
 export function handleRequest(req, res) {
   res.setHeader("Content-Type", "application/json");
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:2000");
 
   const routes = {
     "GET /api/produtos": getProdutos,

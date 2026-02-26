@@ -1,3 +1,6 @@
+@import "tailwindcss";
+@import "../../styles/variables.css";
+
 .loginBackground {
   align-items: center;
   justify-content: center;
@@ -12,13 +15,13 @@
   container-type: inline-size;
   container-name: form;
   width: calc(100% - 50px);
-  max-width: 720px;
+  max-width: 650px;
 }
 
 .loginCtn,
 .registerCtn {
   align-items: center;
-  height: 500px;
+  height: 420px;
   width: 100%;
   border-radius: 25px;
   box-shadow: 0 0 15px var(--shadow-color);
@@ -59,7 +62,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 5px;
+  gap: 6px;
 }
 
 .switch-link {
@@ -73,35 +76,40 @@
 
 .loginCtn h2,
 .registerCtn h2 {
+  font-weight: 700;
   font-size: 45px;
   width: 100%;
   text-align: center;
 }
 
-.loginFields {
+.loginForm {
   flex: 1;
+  display: flex;
   padding: 20px;
   height: 100%;
   background-color: var(--background3);
   border-radius: 25px;
-  display: grid;
-  align-content: center;
-  justify-items: center;
+  /* display: grid; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 12px;
 }
 
-.loginFields input {
-  height: 55px;
+.loginForm input {
+  @apply p-0.5 w-full rounded-lg bg-(--background1) border-5 border-(--background4) outline-none text-(--text-secondary) h-[55px] dark:bg-amber-400;
+  /* height: 55px;
   border-radius: 14px;
   border: none;
   outline: none;
   border: 5px var(--background4) solid;
   width: 100%;
-  background-color: var(--background1);
+  background-color: var(--background1); */
 }
 
-.loginFields button {
-  margin-top: 15px;
+.loginForm button {
+  @apply rounded-[15px] bg-(--secondary-color) text-black border-6 border-(--background3) w-[120px] h-[55px] hover:bg-orange-400 transition active:bg-amber-500;
+  /* margin-top: 15px;
   cursor: pointer;
   height: 55px;
   width: 150px;
@@ -109,15 +117,22 @@
   border-radius: 14px;
   background-color: var(--secondary-color);
   padding: 0;
-  color: black;
+  color: black; */
 }
 
-.loginFields button:hover {
+.loginFields {
+  flex: 1;
+  gap: 10px;
+  display: grid;
+  width: 100%;
+  align-content: center;
+}
+/* .loginFields button:hover {
   background-color: var(--darker-secondary-color);
 }
 .loginFields button:active {
   background-color: var(--darker-secondary-color);
-}
+} */
 
 @media screen and (max-width: 700px) {
   .loginForms {
@@ -134,8 +149,8 @@
     justify-content: center;
   }
 
-  .loginFields {
-    background-color: inherit;
+  .loginForm {
+    background-color: transparent;
     padding: 0 20px 20px;
   }
 }
