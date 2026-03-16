@@ -16,7 +16,7 @@
 :root {
   --logo-png: url("../../assets/logod.png");
   --color-text: rgb(205, 205, 205);
-  --secondary-color: rgb(239, 155, 0);
+  --secondary-color: rgb(218, 151, 27);
   --secondary-color-transparent: rgba(194, 126, 0, 0.511);
   --darker-secondary-color: rgb(185, 117, 0);
   --main-background: rgb(31, 31, 31);
@@ -26,7 +26,7 @@
   --background4: rgb(34, 34, 34);
   --background5: rgb(24, 24, 24);
   --background6: rgb(71, 71, 71);
-  --shadow-color: rgb(12, 12, 12, 0.5);
+  --shadow-var: 0 5px 10px 1px rgba(0, 0, 0, 0.126);
   --main-radius: 8px;
   --main-border: 5px solid var(--background3);
   --short-buttons-width: 60px;

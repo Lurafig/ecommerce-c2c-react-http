@@ -1,6 +1,7 @@
+@import "tailwindcss";
+
 .AdsListCtn {
-  position: relative;
-  width: calc(250px * 4);
+  /* width: 250px; */
   column-count: 4;
   column-gap: 10px;
 }
@@ -34,23 +35,24 @@
     justify-items: center;
   }
 }
+
 @media screen and (max-width: calc(250px * 4 + 30px)) {
   .AdsListCtn {
-    width: calc(250px * 3);
+    width: calc(250px * 3 + 20px);
     column-count: 3;
   }
 }
 
 @media screen and (max-width: calc(250px * 3 + 20px)) {
   .AdsListCtn {
-    width: calc(250px * 2);
+    width: calc(250px * 2 + 10px);
     column-count: 2;
   }
 }
 
 @media screen and (max-width: 600px) {
   .AdsListCtn {
-    width: calc(100vw - 30px);
+    width: calc(100% - 20px);
     column-count: 1;
   }
 }

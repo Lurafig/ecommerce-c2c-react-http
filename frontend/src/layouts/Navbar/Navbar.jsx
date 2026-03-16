@@ -18,8 +18,8 @@ function NavLinkBttns({ toPage, children, onClick }) {
   ${
     {
       "/post":
-        "bg-[var(--secondary-color)] border-[4px] border-(--main-background) border-solid",
-      "/profile": "bg-(--background4) border-5 border-(--background3)",
+        "bg-(--secondary-color) border-[5px] border-(--main-background) border-solid",
+      "/profile": "bg-(--background4) border-[5px] border-(--background3)",
     }[toPage]
   }`;
 
@@ -40,7 +40,7 @@ export default function Navbar() {
   const { toggleLogin } = UseLoginContext();
 
   return (
-    <nav className="flex h-[100px] w-full items-center box-border">
+    <nav className="sticky top-0 z-1 flex h-[100px] w-full items-center box-border shadow-(--shadow-var)">
       <div className="flex items-center justify-center w-1/2 h-full bg-(--background1)">
         <Link
           to="/home"
@@ -60,7 +60,7 @@ export default function Navbar() {
       </div>
       <div className="flex items-center justify-center h-full w-1/2 bg-(--background5)">
         <NavLinkBttns toPage="/profile" onClick={() => toggleLogin()}>
-          <p className="relative overflow-hidden m-[6px] max-w-[90px] text-nowrap text-ellipsis max-[500px]:hidden">
+          <p className="relative overflow-hidden m-[6.5px] max-w-[90px] text-nowrap text-ellipsis max-[500px]:hidden">
             Lucas Ramos
           </p>
           <img

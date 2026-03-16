@@ -1,9 +1,13 @@
 @import url("./variables.css");
 @import "tailwindcss";
 
+@font-face {
+  font-family: "testando";
+  src: url("..\fonts\Inter-VariableFont_opsz,wght.ttf");
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-weight: 400;
+  font-family: "testando";
 
   color-scheme: light dark;
   color: var(--secondary-color);
@@ -47,11 +51,13 @@ h1 {
   line-height: 1.1;
 }
 
-/* p,
 h1 {
   margin: 0;
-} */
+}
 
+img {
+  user-select: none;
+}
 /* button {
   border-radius: 8px;
   border: 1px solid transparent;

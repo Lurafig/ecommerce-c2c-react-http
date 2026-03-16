@@ -12,7 +12,10 @@ function NotFound() {
         justifyContent: "center",
       }}
     >
-      <h1>{"This page was not found"}</h1>
+      <h2 className="text-3xl w-[400px] grid">
+        <span className="text-7xl text-amber-600 font-bold">404</span>
+        {"This page was not found"}
+      </h2>
     </main>
   );
 }

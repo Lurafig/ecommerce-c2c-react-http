@@ -7,9 +7,14 @@ import noAds from "../../assets/icons8-limpar-pesquisa-30.png";
 import netError from "../../assets/icons8-error-globe-64 (1).png";
 
 import "./AdsList.css";
+import { useSearchParams } from "react-router-dom";
 
 export function AdsList() {
   const { ads, loading, error } = useAds();
+
+  const [searchParams] = useSearchParams();
+
+  const sortParam = searchParams.get("sort");
 
   if (loading) return <Loading />;
 
@@ -18,12 +23,7 @@ export function AdsList() {
       return (
         <div>
           <p className="errorMessage">
-            <img
-              // className="w-[40px]"
-              src={netError}
-              width="40"
-              draggable="false"
-            ></img>
+            <img src={netError} width="40" draggable="false"></img>
             Erro de rede ou conexão
           </p>
         </div>
@@ -31,23 +31,24 @@ export function AdsList() {
     }
   }
 
-  const listOfAds = ads.map((a) => <AdCtn {...a} />);
+  ads.sort(
+    (a, b) =>
+      ({ 0: "", 1: a.price - b.price, 2: b.price - a.price })[sortParam],
+  );
+
+  const listOfAds = ads.map((a) => <AdCtn key={a.id} {...a} />);
 
   if (listOfAds.length === 0) {
     return (
       <div className="noAdsMessageCtn">
         <p className="noAdsMessage">
-          <img src={noAds} draggable="false" height="40"></img>Nenhum anúncio
+          <img src={noAds} width="40" draggable="false"></img>Nenhum anúncio
           encontrado
         </p>
       </div>
     );
   }
-  // const columnCount = listOfAds.length < 10 ? "none" : "inherit";
+  // const columnCount = listOfAds.length < 10 ? "1" : "inherit";
 
-  return (
-    <div className="AdsListCtn" style={{ columnCount: "inherit" }}>
-      {listOfAds}
-    </div>
-  );
+  return <div className="AdsListCtn">{listOfAds}</div>;
 }

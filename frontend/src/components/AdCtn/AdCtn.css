@@ -5,7 +5,7 @@
   border-radius: 12px;
   color: var(--color-text);
   max-width: 250px;
-  padding: 7px;
+  padding: 6.5px;
   margin-bottom: 15px;
   box-shadow: 5px 5px 15px 1px var(--shadow-color);
   background-color: var(--background1);
@@ -21,7 +21,7 @@
 
 .AdImage {
   background-color: var(--background5);
-  border-radius: 12px 12px 0 0;
+  border-radius: 8px 8px 0 0;
   object-fit: contain;
   height: 300px;
   width: 100%;
@@ -33,7 +33,7 @@
   width: 100%;
   text-align: start;
   word-break: break-all;
-  border-radius: 0 0 12px 12px;
+  border-radius: 0 0 8px 8px;
   padding: 10px;
   background-color: var(--background3);
 }
@@ -45,7 +45,7 @@
 }
 
 .AdCtn:nth-of-type(2n) .AdInfos {
-  background-color: var(--background5);
+  background-color: var(--background4);
 }
 
 .AdInfos h4 {
@@ -55,7 +55,7 @@
 @media screen and (max-width: 600px) {
   .AdCtn {
     max-width: none;
-    width: 100%;
+    width: calc(100% - 32px);
   }
 
   .AdCtn:hover {
