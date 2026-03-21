@@ -1,0 +1,35 @@
+@id = 0
+@hostname = localhost
+@port = 3000
+
+### get produtos
+GET http://{{hostname}}:{{port}}/api/produtos/{{id}}
+
+### POST produtos
+# @name createProduct
+# @prompt description
+# @prompt price
+POST http://{{hostname}}:{{port}}/api/produtos/
+Content-Type: application/json
+
+{
+  "description": "{{description}}",
+  "price": {{price}}
+}
+
+###
+
+@id = {{createProduct.response.body.$.produto.$.id}}
+
+###
+# @prompt description
+PUT http://localhost:3000/api/produtos/{{id}}
+Content-Type: application/json
+
+{
+  "description": "{{description}}",
+  "price": 33
+}
+
+###
+DELETE http://localhost:3000/api/produtos/{{id}}
