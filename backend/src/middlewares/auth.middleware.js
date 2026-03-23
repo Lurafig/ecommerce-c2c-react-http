@@ -11,6 +11,7 @@ export default function (req, res, next) {
   try {
     const decoded = jwt.verify(token, "SECRET");
     req.user = decoded;
+    next();
   } catch (error) {
     res.statusCode = 401;
     res.end(JSON.stringify({ error: error.message }));

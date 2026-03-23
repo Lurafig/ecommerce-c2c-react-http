@@ -1,7 +1,7 @@
 import * as bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-const users = [];
+export const users = [];
 
 export async function register(email, password) {
   const hash = await bcrypt.hash(password, 10);
@@ -16,6 +16,7 @@ export async function register(email, password) {
 }
 
 export async function login(email, password) {
+  console.log(users);
   const user = users.find((u) => u.email === email);
 
   if (!user) throw new Error("Usuário não encontrado");
