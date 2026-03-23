@@ -1,6 +1,6 @@
 @hostname = localhost
 @port = 3000
 
-GET http://{{hostname}}:{{port}}/api/user/me/1774068303946
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTc3NDA2ODMwMzk0NiwiaWF0IjoxNzc0MDY4MzEwLCJleHAiOjE3NzQwNzE5MTB9.Ol_lZhTNTPPceylItAIVsTwLqcKFzZ7TXjEG6PAZB8s
+GET http://{{hostname}}:{{port}}/api/user/me/?id=177422283417
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTc3NDIyMzI4MzQxNywiaWF0IjoxNzc0MjIzMjg2LCJleHAiOjE3NzQyMjY4ODZ9.LDknP7NIW1XVyN2hEwuDtKduH7j4F0eOBjbooBDSN9M
 Content-Type: application/json
