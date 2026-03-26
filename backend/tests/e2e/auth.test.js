@@ -2,16 +2,30 @@ import request from "supertest";
 import server from "../../src/app";
 
 describe("UsersE2E", () => {
-  it("should create a user", async () => {
-    const response = await request(server).post("/api/auth/register").send({
-      email: "eu@teste.com",
-      password: "eu lucas",
-    });
+  const body = {
+    email: "eu@mesmo.com",
+    password: "euMesmo123",
+  };
 
-    console.log("1", response.headers);
-    console.log("2", response.text);
+  let userId, token;
+
+  it("should register an user", async () => {
+    const response = await request(server)
+      .post("/api/auth/register")
+      .send(body);
+
+    userId = response.body.id;
 
     expect(response.status).toBe(201);
-    expect(response.body.email).toBe("eu@teste.com");
+  });
+  it("Shoud log in an user", async () => {
+    const loginRes = await request(server).post("/api/auth/login").send(body);
+    token = loginRes.body.token;
+
+    const getMyUserInfo = await request(server)
+      .get(`/api/user/me/?id=${userId}`)
+      .set("Authorization", `Bearer ${token}`);
+
+    expect(getMyUserInfo.body).toBe({ id: userId, email: body.email });
   });
 });
