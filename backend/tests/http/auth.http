@@ -1,20 +1,21 @@
-@hostname = localhost
-@port = 3000
-
-###
-POST http://localhost:3000/api/auth/register
+@port = {{$processEnv port}}
+### POST /api/auth/register
+# @name i
+POST http://{{hostname}}:{{port}}/api/auth/register
 Content-Type: application/json
 
 {
   "email": "eu@teste.com",
   "password": "eu lucas"
 }
-
 ###
-POST http://localhost:3000/api/auth/login
+@email = {{i.request.body.email}}
+@password = {{i.request.body.password}}
+###
+POST http://{{hostname}}:{{port}}/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "eu@teste.com",
-  "password": "eu lucas"
+  "email": "{{email}}",
+  "password": "{{password}}"
 }

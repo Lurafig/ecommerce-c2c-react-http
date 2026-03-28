@@ -1,6 +1,4 @@
 @id = 0
-@hostname = localhost
-@port = 3000
 
 ### get produtos
 GET http://{{hostname}}:{{port}}/api/produtos/{{id}}
@@ -23,7 +21,7 @@ Content-Type: application/json
 
 ###
 # @prompt description
-PUT http://localhost:3000/api/produtos/{{id}}
+PUT http://{{hostname}}:{{port}}/api/produtos/{{id}}
 Content-Type: application/json
 
 {
@@ -32,4 +30,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/api/produtos/{{id}}
+DELETE http://{{hostname}}:{{port}}/api/produtos/{{id}}
