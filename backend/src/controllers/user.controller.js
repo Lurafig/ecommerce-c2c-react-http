@@ -8,7 +8,7 @@ export async function getMe(req, res) {
 
   const user = await userService.getById(id);
 
-  res.statusCode = user ? 200 : 404;
   res.setHeader("Content-Type", "application/json");
+  res.statusCode = user ? 200 : 404;
   res.end(JSON.stringify(user || { erro: "Usuário não encontrado" }));
 }

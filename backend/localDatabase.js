@@ -6,7 +6,7 @@ export class Database {
       return this.#data;
     }
 
-    return this.#data.filter((a) => (a.id = id));
+    return this.#data.filter((a) => a.id === id);
   }
 
   add(product) {

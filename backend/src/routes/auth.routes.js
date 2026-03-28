@@ -8,6 +8,5 @@ const routes = {
 export async function handleRequest(req, res) {
   const routeKey = `${req.method} /${req.url.split("/").slice(2, 4).join("/")}`;
 
-  console.log(routeKey);
   const handler = await routes[routeKey](req, res);
 }

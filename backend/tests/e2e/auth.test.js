@@ -3,7 +3,7 @@ import server from "../../src/app";
 
 describe("UsersE2E", () => {
   const body = {
-    emil: "eu@mesmo.com",
+    email: "eu@mesmo.com",
     password: "euMesmo123",
   };
 
@@ -28,6 +28,6 @@ describe("UsersE2E", () => {
         token: expect.any(String),
       }),
     );
-    expect(response.status).toBe(201);
+    expect(loginRes.status).toBe(200);
   });
 });

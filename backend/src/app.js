@@ -76,7 +76,6 @@ async function handleRequest(req, res) {
   await applyMiddlewares([resTimeout, jsonParser], req, res);
   const routePrefix = req.url.split("/").slice(0, 3).join("/");
 
-  console.log(req.body);
   prefRoutes[routePrefix](req, res);
 }
 
