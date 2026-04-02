@@ -6,7 +6,7 @@ Install backend and frontend dependencies
 npm run install:all
 ```
 
-Run application in development mode
+To run application in development mode:
 ```Shell
 npm run dev
 ```
